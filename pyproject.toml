@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-researcher-helve"
+version = "0.1.0"
+description = "Helve search retriever plugin for GPT Researcher"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+  { name = "Helve", email = "daniel.foster@helve.dev" }
+]
+keywords = ["gpt-researcher", "retriever", "plugin", "search", "helve"]
+dependencies = [
+  "requests>=2.28.0",
+]
+
+[project.urls]
+Homepage = "https://helve.dev"
+Documentation = "https://docs.helve.dev"
+Repository = "https://github.com/helve-dev/gpt-researcher-helve"
+Issues = "https://github.com/helve-dev/gpt-researcher-helve/issues"
+
+[project.entry-points."gpt_researcher.retrievers"]
+helve = "gpt_researcher_helve:HelveSearch"
+
+[tool.setuptools.packages.find]
+where = ["src"]
